@@ -1,0 +1,19 @@
+{
+    "name": "zalak/project1",
+    "description": "Project - csv to html table",
+    "license": "mit",
+    "authors": [
+        {
+            "name": "Zalak Patel",
+            "email": "zp55@njit.edu"
+        }
+    ],
+
+    "autoload": {
+        "psr-4": { "App\\": "src" }
+    },
+
+    "require": {
+        "phpunit/phpunit": "3.7.*"
+    }
+}
