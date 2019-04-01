@@ -1,6 +1,8 @@
 <?php
+declare(strict_types=1);
+use PHPUnit\Framework\TestCase;
 
-class CSVTest extends \PHPUnit_Framework_TestCase
+class CSVTest extends TestCase
 {
     protected $filepath;
     protected $csv_file;

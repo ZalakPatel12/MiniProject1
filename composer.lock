@@ -473,13 +473,10 @@
             ],
             "authors": [
                 {
-                    "name": "Fabien Potencier",
-                    "email": "fabien@symfony.com"
-                },
-                {
-                    "name": "Symfony Community",
-                    "homepage": "https://symfony.com/contributors"
+                    "name": "Zalak Patel",
+                    "email": "zp55@njit.edu"
                 }
+
             ],
             "description": "Symfony Yaml Component",
             "homepage": "https://symfony.com",
