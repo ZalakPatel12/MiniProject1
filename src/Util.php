@@ -8,45 +8,6 @@
 namespace App;
 
 /**
- * For initialization
- */
-
-class initialization
-{
-    public function initial($filename)
-    {
-        $handler	= (new CSV_File)->create_handle($filename);
-        $data		= (new CSV_File)->get_file_data($handler);
-                      (new HTML_Table)->generate_headings($data);
-        while ($data = (new CSV_File)->get_file_data($handler)) {
-            (new CSV_File)->data_into_HTML($data);
-        }
-    }
-}
-
-
-/**
- * Get Records From CSV
- */
-class CSV_File
-{
-    public function create_handle($filename)
-    {
-        return fopen($filename, "r");
-    }
-
-    public function get_file_data($handler)
-    {
-        return fgetcsv($handler, 1000, ",");
-    }
-
-    public function data_into_HTML($data)
-    {
-        return (new HTML_Table)->generate_rows($data);
-    }
-}
-
-/**
  * For Generate Tables
  */
 class HTML_Table
@@ -73,3 +34,44 @@ class HTML_Table
         return $tr;
     }
 }
+
+/**
+ * Get Records From CSV
+ */
+class CSV_File
+{
+    public function create_handle($filename)
+    {
+        return fopen($filename, "r");
+    }
+
+    public function get_file_data($handler)
+    {
+        return fgetcsv($handler, 1000, ",");
+    }
+
+    public function data_into_HTML($data)
+    {
+        return (new HTML_Table)->generate_rows($data);
+    }
+}
+
+
+/**
+ * For initialization
+ */
+
+class initialization
+{
+    public function initial($filename)
+    {
+        $handler	= (new CSV_File)->create_handle($filename);
+        $data		= (new CSV_File)->get_file_data($handler);
+        (new HTML_Table)->generate_headings($data);
+        while ($data = (new CSV_File)->get_file_data($handler)) {
+            (new CSV_File)->data_into_HTML($data);
+        }
+    }
+}
+
+
