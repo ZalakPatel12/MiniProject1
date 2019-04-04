@@ -24,7 +24,7 @@ require_once("Util.php");
 		<h2 class="alert alert-info text-center">CSV File Records</h2><br>
 	<table class="table table-bordered table-striped">
 		<?php
-        (new initialization)->initial("03.csv");	// File 03
+        (new \App\initialization)->initial("03.csv");	// File 03
         ?>
 	</table>
 	</div>
